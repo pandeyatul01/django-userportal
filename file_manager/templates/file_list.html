@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File List</title>
+</head>
+<body>
+    <h2>Your Uploaded Files</h2>
+    <ul>
+        {% for file in files %}
+            <li>{{ file.file.name }} - Uploaded on {{ file.uploaded_at }}</li>
+        {% empty %}
+            <li>No files uploaded.</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'upload-files' %}">Upload Another File</a><br>
+    <a href="{% url 'home' %}">home</a>
+</body>
+</html>

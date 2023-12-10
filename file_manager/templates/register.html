@@ -1,0 +1,15 @@
+<form method="POST"> {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Join Today</legend>
+        {{ form.as_p }}
+    </fieldset>
+
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+    </div>
+
+</form>
+
+<h2>Already registered ?</h2>
+<a href="{% url 'login' %}">login</a><br>
+<a href="{% url 'home' %}">home</a>
